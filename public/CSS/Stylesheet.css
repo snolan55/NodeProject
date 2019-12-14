@@ -1,0 +1,48 @@
+#selectForm {
+  display: flex;
+  width: 300px;
+  margin: 10px;
+  margin-left: 15px;
+  margin-top: 0px;
+}
+body {
+  background-color: black;
+}
+h1 {
+  text-align: center !important;
+  color: black;
+  display: flex;
+  margin-left: 42%;
+  margin-right: 40%;
+}
+nav {
+  text-align: center;
+}
+.display-4 {
+  text-align: center;
+
+}
+.navbar {
+  float: none;
+  text-align: center !important;
+}
+p {
+  color: white;
+  text-align: center;
+}
+img {
+  text-align: center;
+}
+.jumbotron {
+  background-color: red;
+  padding-bottom: 50px;
+  margin-bottom: 0px;
+}
+#box {
+  border-color: grey;
+  border-style: double;
+  border-radius: 5px;
+  border-width: medium;
+  padding: 25px;
+  background-color: whiteSmoke;
+}

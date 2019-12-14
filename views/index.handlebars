@@ -1,0 +1,103 @@
+<div class= "row">
+<form action="/api/forms/:forms" method="post" class="form-inline w-100">
+    <select name="selectForm" id="selectForm" class="form-control mb-4 w-80">
+      <option value="0" selected="selected">-Select a search query-</option>
+      <option value="1" name="form_name1">Title</option>
+      <option value="2" name="form_name2">Code</option>
+      <option value="3" name="form_name3">Instructor</option>
+      <option value="4" name="form_name4">Day</option>
+      <option value="5" name="form_name5">Seats</option>
+      <option value="6" name="form_name6">Structure</option>
+      <option value="7" name="form_name7">Instructor & Seats</option>
+      <option value="8" name="form_name8">Instructor & Day</option>
+    </select>
+    <input type='submit' class="btn btn-secondary mb-4" name ='register'>
+</form>
+</div>
+{{#if myObj.forms.[1]}}
+<form action="/api/courses/title" method="post" class="mb-4">
+  <div class="form-group">
+    <label for="Title">Title</label>
+    <input type="text" name="title" class="form-control">
+  </div>
+  <input type="submit" value="Find Course" class="btn btn-primary btn-block">
+</form>
+{{/if}}
+{{#if myObj.forms.[2]}}
+<form action="/api/courses/code/" method="post" class="mb-4">
+  <div class="form-group">
+    <label for="Code">Code</label>
+    <input type="text" name="code" class="form-control">
+  </div>
+  <input type="submit" value="Find Course" class="btn btn-primary btn-block">
+</form>
+{{/if}}
+{{#if myObj.forms.[3]}}
+<form action="/api/courses/instructor/" method="post" class="mb-4">
+  <div class="form-group">
+    <label for="Instructor">Instructor</label>
+    <input type="text" name="instructor" class="form-control">
+  </div>
+  <input type="submit" value="Find Course" class="btn btn-primary btn-block">
+</form>
+{{/if}}
+{{#if myObj.forms.[4]}}
+<form action="/api/courses/day/" method="post" class="mb-4">
+  <div class="form-group">
+    <label for="Day">Day</label>
+    <input type="text" name="day" class="form-control">
+  </div>
+  <input type="submit" value="Find Course" class="btn btn-primary btn-block">
+</form>
+{{/if}}
+{{#if myObj.forms.[5]}}
+<form action="/api/courses/seats/" method="post" class="mb-4">
+  <div class="form-group">
+    <label for="Seats">Seats</label>
+    <input type="text" name="seats" class="form-control">
+  </div>
+  <input type="submit" value="Find Course" class="btn btn-primary btn-block">
+</form>
+{{/if}}
+{{#if myObj.forms.[6]}}
+<form action="/api/courses/classType/" method="post" class="mb-4">
+  <div class="form-group">
+    <label for="structure">Structure</label>
+    <input type="text" name="Type" class="form-control">
+  </div>
+  <input type="submit" value="Find Course" class="btn btn-primary btn-block">
+</form>
+{{/if}}
+{{#if myObj.forms.[7]}}
+<form action="/api/courses/instructor_seats/" method="post" class="mb-4">
+  <div class="form-group">
+    <label for="Instructor">Instructor</label>
+    <input type="text" name="instructor" class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="Seats">Seats</label>
+    <input type="text" name="seats" class="form-control">
+  </div>
+  <input type="submit" value="Find Course" class="btn btn-primary btn-block">
+</form>
+{{/if}}
+{{#if myObj.forms.[8]}}
+<form action="/api/courses/instructor_day/" method="post" class="mb-4">
+  <div class="form-group">
+    <label for="Instructor">Instructor</label>
+    <input type="text" name="instructor" class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="Day">Day</label>
+    <input type="text" name="day" class="form-control">
+  </div>
+  <input type="submit" value="Find Course" class="btn btn-primary btn-block">
+</form>
+{{/if}}
+<h4>Results</h4>
+<ul class="list-group">
+  {{#each results}}
+  <li class="list-group-item">{{this.code}}: {{this.title}}| {{this.instructor}}| {{this.day}}| Seats:{{this.seats}}| Structure:{{this.Type}}</li>
+  {{/each}}
+  <li class="list-group-item">{{errorMessage}}</li>
+</ul>
